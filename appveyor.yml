@@ -1,10 +1,10 @@
 version: '{build}'
 pull_requests:
   do_not_increment_build_number: true
-#branches:
-#  only:
-#  - master
-#  - develop
+branches:
+  only:
+  - master
+  - develop
 environment:
   NugetAPIKey:
     secure: zvkaZiaBXVko+3ZzuSb7W6DTUJmHX98XgEhKs28SnGD+4TM3gzhPxVnNWSmBhXEx
@@ -31,7 +31,6 @@ deploy_script:
 
     if( $publish.ExitCode -ne 0 ) { Write-Error "Publish step failed - see above logs"}
 for:
--
   branches:
     only:
     - master
