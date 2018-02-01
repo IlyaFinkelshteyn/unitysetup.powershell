@@ -31,9 +31,10 @@ deploy_script:
 
     if( $publish.ExitCode -ne 0 ) { Write-Error "Publish step failed - see above logs"}
 for:
+-
   branches:
     only:
-    - master
+      - master
   build_script:
   - ps: .\build.ps1 -Revision "$env:APPVEYOR_BUILD_NUMBER"
 
